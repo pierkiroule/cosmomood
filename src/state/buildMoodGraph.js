@@ -1,7 +1,6 @@
 export function buildMoodGraph({ selectedEmojis, occurrenceScore, cooccurrenceMatrix }) {
   const nodes = (selectedEmojis || []).map(emoji => ({
     id: emoji,
-    emoji,
     weight: 1 + (occurrenceScore?.[emoji] || 0)
   }));
 
