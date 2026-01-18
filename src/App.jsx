@@ -68,7 +68,7 @@ export default function App() {
   return (
     <div className="app">
       {step === "GRAPH" && graph.nodes.length > 0 && (
-        <ThreeScene nodes={graph.nodes} mode={mode} />
+        <ThreeScene nodes={graph.nodes} links={graph.links} mode={mode} />
       )}
 
       <Header />
