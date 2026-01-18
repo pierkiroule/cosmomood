@@ -25,7 +25,8 @@ export default function App() {
     if (qIndex < QUESTIONS.length - 1) {
       setQIndex(i => i + 1);
     } else {
-      const myth = mythEngine.revealMyth();
+      const nextTags = [...mythEngine.tags, ...option.tags];
+      const myth = mythEngine.revealMyth(nextTags);
 
       const nodes = myth.emojis.map(e => ({
         id: crypto.randomUUID(),

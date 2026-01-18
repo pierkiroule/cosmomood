@@ -9,12 +9,12 @@ export function useMythEngine() {
     setTags(prev => [...prev, ...newTags]);
   };
 
-  const revealMyth = () => {
+  const revealMyth = (tagList = tags) => {
     let best = null;
     let scoreMax = -1;
 
     MYTHS.forEach(m => {
-      const score = m.tags.filter(t => tags.includes(t)).length;
+      const score = m.tags.filter(t => tagList.includes(t)).length;
       if (score > scoreMax) {
         scoreMax = score;
         best = m;
